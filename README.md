@@ -1,6 +1,7 @@
 ```python
+
 from dataclasses import dataclass
-from typing import Set
+from typing import Tuple
 
 
 class Meta(type):
@@ -18,10 +19,10 @@ class Bio(metaclass=Meta):
 
 
 class Stack(metaclass=Meta):
-    languages   : Set[str] = {"Python", "Go", "Shell"}
-    databases   : Set[str] = {"MySQL", "PostgreSQL", "Mongo", "Redis"}
-    misc        : Set[str] = {"Docker"}
-    ongoing     : Set[str] = {"JavaScript"}
+    languages   : Tuple[str, ...] = ("Python", "Go", "Shell")
+    databases   : Tuple[str, ...] = ("MySQL", "PostgreSQL", "Mongo", "Redis")
+    misc        : Tuple[str, ...] = ("Docker","Celery")
+    ongoing     : Tuple[str, ...] = ("Django", "JavaScript")
 
 
 class Social(metaclass=Meta):
