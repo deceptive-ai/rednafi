@@ -17,7 +17,7 @@ class Bio(metaclass=Meta):
     blog        : str = "rednafi.github.io/digressions"
 
 
-class Stack:
+class Stack(metaclass=Meta):
     languages   : Set[str] = {"Python", "Go", "Shell"}
     databases   : Set[str] = {"MySQL", "PostgreSQL", "Mongo", "Redis"}
     misc        : Set[str] = {"Docker"}
