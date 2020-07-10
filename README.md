@@ -1,16 +1,30 @@
-### Hi there 👋
+```python
+from dataclasses import dataclass
+from typing import Set
 
-<!--
-**rednafi/rednafi** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
-Here are some ideas to get you started:
+class Meta(type):
+    def __new__(cls, name, bases, attrs):
+        new_cls = super().__new__(cls, name, bases, attrs)
+        return dataclass(unsafe_hash=True, frozen=True)(new_cls)
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+
+class Bio(metaclass=Meta):
+    name        : str = "Redowan Delowar"
+    designation : str = "Data Scientist"
+    company     : str = "ShopUp"
+    base        : str = "Dhaka, Bangladesh"
+    blog        : str = "rednafi.github.io/digressions"
+
+
+class Stack:
+    languages   : Set[str] = {"Python", "Go", "Shell"}
+    databases   : Set[str] = {"MySQL", "PostgreSQL", "Mongo", "Redis"}
+    misc        : Set[str] = {"Docker"}
+    ongoing     : Set[str] = {"JavaScript"}
+
+
+class Social(metaclass=Meta):
+    twitter     : str = "rednafi"
+    linkedin    : str = "redowan"
+```
