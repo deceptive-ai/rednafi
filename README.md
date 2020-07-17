@@ -21,7 +21,7 @@ class Bio(metaclass=Meta):
 class Stack(metaclass=Meta):
     languages   : Tuple[str, ...] = ("Python", "Go", "Shell")
     databases   : Tuple[str, ...] = ("MySQL", "PostgreSQL", "Mongo", "Redis")
-    misc        : Tuple[str, ...] = ("Docker","Celery")
+    misc        : Tuple[str, ...] = ("Docker", "Celery")
     ongoing     : Tuple[str, ...] = ("Django", "JavaScript")
 
 
